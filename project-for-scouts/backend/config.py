@@ -6,5 +6,5 @@ def dev_config(flask_app):
     config['DEBUG'] = True
     config[
         'MONGO_URI'
-    ] = 'mongodb://127.0.0.1:27017/testdb'
+    ] = 'mongodb://127.0.0.1:27017/testdb2'
     return config

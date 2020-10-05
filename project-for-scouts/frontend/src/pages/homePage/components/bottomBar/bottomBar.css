@@ -1,0 +1,24 @@
+#bottom_bar {
+    background-color: white;
+    width: 13.5%;
+    margin: 1%;
+    bottom: 0;
+    position: absolute;
+}
+
+.nb {
+    width: 15%;
+    margin: 0 1% 0.2% 1%;
+    text-decoration: underline;
+}
+
+.text {
+    width: 145px;
+    position: absolute;
+    right: 0;
+}
+
+.pos {
+    display: flex;
+    flex-flow: row;
+}

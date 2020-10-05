@@ -6,7 +6,6 @@ import hashlib
 mod = Blueprint('/register', __name__)
 
 APP = Flask(__name__)
-
 dev_config(APP)
 mongo = PyMongo(APP)
 

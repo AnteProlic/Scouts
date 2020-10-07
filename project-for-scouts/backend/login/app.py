@@ -9,6 +9,12 @@ APP = Flask(__name__)
 dev_config(APP)
 mongo = PyMongo(APP)
 
+@mod.route('/login')
+def idenx():
+    if 'name' in session:
+        return 'You are logged in as ' + session['name']
+    return redirect('http://localhost:3000/')
+
 @mod.route('/login', methods=['POST', 'GET'])
 def login():
     if request.method == 'POST':
@@ -16,6 +22,7 @@ def login():
         login_user = users.find_one({'name' : request.form['username']})
         if login_user is not None:
             if hashlib.sha256(bytes(request.form['password'], 'UTF-8')).hexdigest() == login_user['password']:
+                session['name'] = login_user['_id']
                 return redirect('http://localhost:3000/login')
             else:
                 return 'Incorrect username/password combination!'

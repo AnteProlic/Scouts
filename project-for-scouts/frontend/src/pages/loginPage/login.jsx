@@ -17,6 +17,8 @@ const Login = () => {
         <Link className='button' to='/register'>REGISTER</Link>
         <hr></hr>
         <Link className='button' to='/'>SKIP</Link>
+        <hr></hr>
+        <button>LOG OUT</button>
     </div>
 };
 

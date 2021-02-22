@@ -1,12 +1,17 @@
 from flask import Flask
+from backend.config import dev_config
+from .db import mongo
+from .routes.auth import user
+from .routes.location import location
+from .routes.legend import legend
+from .routes.fileman import fileman
 
 app = Flask(__name__)
+dev_config(app)
 
-from backend.login.app import mod
-from backend.register.app import mod
+app.register_blueprint(user)
+app.register_blueprint(location)
+app.register_blueprint(legend)
+app.register_blueprint(fileman)
 
-app.register_blueprint(login.app.mod, url_prefix='/user')
-app.register_blueprint(register.app.mod, url_prefix='/user')
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+mongo.init_app(app)

@@ -7,13 +7,20 @@
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "html-react-parser": "^1.1.1",
     "leaflet": "^1.7.1",
     "react": "^16.13.1",
+    "react-contenteditable": "^3.3.5",
+    "react-contextmenu": "^2.14.0",
     "react-dom": "^16.13.1",
     "react-leaflet": "^2.7.0",
+    "react-leaflet-editable-popup": "^1.1.4",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "react-simple-sidenav": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,6 +31,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:5000",
   "browserslist": {
     "production": [
       ">0.2%",

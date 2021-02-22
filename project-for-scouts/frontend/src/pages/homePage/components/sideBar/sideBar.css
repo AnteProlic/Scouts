@@ -1,8 +1,31 @@
-#sidebar_container {
-    height: 100vh;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+.sidebar {
+    height: 100%;
     width: 15%;
-    background-color: white;
     position: absolute;
-    right: 0;
-    top: 0;
+    margin-left: 85%;
+    font-family: 'Roboto', sans-serif;
+    overflow: scroll;
+}
+#select-container {
+    height: 30vh;
+    overflow: auto;
+    
+}
+
+.link:hover {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.144) , rgba(0, 0, 0, 0))
+}
+
+.visible {
+    visibility: visible;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.hover {
+    cursor: pointer;
 }

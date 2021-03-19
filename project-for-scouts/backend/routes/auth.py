@@ -3,13 +3,21 @@ import hashlib
 
 from flask import Flask, Blueprint, request, session, jsonify
 from ..db import mongo
+from bson.objectid import ObjectId
 
 user = Blueprint('user', __name__, url_prefix='/user')
 
+@user.route('/get', methods=['POST', 'GET'])
+def get_user():
+    if 'name' in session:
+        users = mongo.db.users
+        login_user = users.find_one({'_id': ObjectId(session['name'])})
+        return str(login_user['admin'])
+    else:
+        return '403'
+
 @user.route('/login', methods=['POST', 'GET'])
 def login():
-    if 'name' in session:
-        return '403'
     if request.method == 'POST':
         users = mongo.db.users
         login_user = users.find_one({'name' : request.json['username']})
@@ -28,7 +36,7 @@ def register():
         existing_user = users.find_one({'name': request.json['username']})
         if existing_user is None:
             hashpass = hashlib.sha256(bytes(request.json['password'], 'UTF-8')).hexdigest()
-            users.insert({'name': request.json['username'], 'email': request.json['email'], 'password': hashpass})
+            users.insert({'name': request.json['username'], 'email': request.json['email'], 'password': hashpass, 'admin': request.json['admin']})
             return '200'
         return '403'
     return '401'

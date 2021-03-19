@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+#nav-container {
+    font-family: 'Rubik', sans-serif;
+    font-size: 100%;
+    z-index: 2;
+    height: 2vh;
+    width: 99%;
+    background-color: rgb(250, 120, 44);
+    box-shadow: 0 -2px 5px 1px black;
+    padding: 0.5%;
+}
+.link2 {
+    font-size: 120%;
+    text-decoration: none;
+    color: white;
+}

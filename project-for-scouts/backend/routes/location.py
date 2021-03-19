@@ -24,22 +24,20 @@ def def_location():
 
 @location.route('/get', methods=['POST'])
 def def_get_location():
-    print(session['name'])
     mylocations = mongo.db.locations
     mylocs = []
     for locs in mylocations.find({}):
-        if locs['user'] == session['name']:
-            info = {
-            '_id': str(locs['_id']),
-            'location': locs['location'],
-            'coordinates': {
-                'latitude': locs['coordinates']['latitude'],
-                'longitude': locs['coordinates']['longitude'],
-            },
-            'description': locs['description'],
-            'collection': locs['collection']
-            }
-            mylocs.append(info)
+        info = {
+        '_id': str(locs['_id']),
+        'location': locs['location'],
+        'coordinates': {
+            'latitude': locs['coordinates']['latitude'],
+            'longitude': locs['coordinates']['longitude'],
+        },
+        'description': locs['description'],
+        'collection': locs['collection']
+        }
+        mylocs.append(info)
     mylocs = jsonify(mylocs)
     mylocs.headers.add('Access-Control-Allow-Origin', "*")
     mylocs.headers.add('Access-Control-Allow-Headers', "*")

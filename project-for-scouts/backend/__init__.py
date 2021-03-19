@@ -5,6 +5,7 @@ from .routes.auth import user
 from .routes.location import location
 from .routes.legend import legend
 from .routes.fileman import fileman
+from .routes.req import req
 
 app = Flask(__name__)
 dev_config(app)
@@ -13,5 +14,6 @@ app.register_blueprint(user)
 app.register_blueprint(location)
 app.register_blueprint(legend)
 app.register_blueprint(fileman)
+app.register_blueprint(req)
 
 mongo.init_app(app)

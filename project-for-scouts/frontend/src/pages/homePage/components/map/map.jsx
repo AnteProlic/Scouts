@@ -6,8 +6,6 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import { Redirect } from 'react-router-dom';
 
 import './map.css';
-import BottomBar from '../bottomBar/bottomBar';
-
 const MapComponent = () => {
   const [markers, setMarker] = useState([43.512207, 16.455883]);
   const [visibility, setVisibility] = useState('markerInvisible');
@@ -19,7 +17,7 @@ const MapComponent = () => {
   const [options, setOptions] = useState([]);
   const [formVisibility, setFormVisibility] = useState('markerInvisible');
 
-  function LookForUser() {
+  /* function LookForUser() {
     axios.get('/user/login')
       .then(res => {
         if (res.data == 404) {
@@ -28,7 +26,7 @@ const MapComponent = () => {
       });
   };
 
-  LookForUser();
+  LookForUser(); */
 
   const myIcon = L.icon({
     iconUrl: require('../images/marker-icon-2x.png'),
@@ -155,10 +153,10 @@ const MapComponent = () => {
       <Marker position={markers} icon={myIcon} ref={openPopup}>
         <Popup className={visibility} id='popup1'>
           Location name: <br></br>
-          <input type='text' onChangeCapture={(e) => { setLocationName(e.target.value) }}></input>
+          <input type='text' className='input2' onChangeCapture={(e) => { setLocationName(e.target.value) }}></input>
           <br />
           Location description: <br></br>
-          <input type='text' onChangeCapture={(e) => { setLocationDescription(e.target.value) }}></input>
+          <input type='text' className='input2' onChangeCapture={(e) => { setLocationDescription(e.target.value) }}></input>
           <br />
           Choose category:
           <br />
@@ -167,12 +165,11 @@ const MapComponent = () => {
           </select>
           <br />
           <br />
-          <input type='submit' value='SUBMIT' onClick={Submit}></input>
+          <input type='submit' className='input2' value='SUBMIT' onClick={Submit}></input>
         </Popup>
       </Marker>
       {points}
     </Map>
-    <BottomBar lat={markers[0]} lng={markers[1]} />
     <div id='new_form' className={formVisibility}>
       Location name:
       <br />

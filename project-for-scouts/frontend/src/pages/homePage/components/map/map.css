@@ -1,5 +1,6 @@
 #map {
-  height: 100vh;
+  height: 96vh;
+  bottom: 0;
   width: 85%;
   position: absolute;
   overflow: hidden;
@@ -27,4 +28,9 @@
 #new_form {
   background-color: white;
   position: absolute;
+}
+.input2 {
+  border: black solid 1px;
+  height: 20px;
+  width: auto;  
 }

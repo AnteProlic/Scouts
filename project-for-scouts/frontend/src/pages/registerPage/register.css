@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+body{
+    background-image: url('../homePage/components/images/205520bc4f68d23a4a2fe7131d3ece0c.jpg');
+    width: 100%;
+}
+#reg-container {
+    position: absolute;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    background-color: white;
+    width: 24%;
+    margin: 10% 37%;
+    height: 14vw;
+    padding: 8% 0;
+    text-align: center;
+}
+.input1 {
+    border: black 1px solid;
+    border-radius: 5px;
+    width: 50%;
+    height: 1vw;
+    margin: 1%;
+    background-color: whitesmoke;
+}
+#title {
+    font-size: 200%;
+}
+#submit{
+    background-color: whitesmoke;
+    width: 20%;
+    height: 2vw;
+}
+#sun {
+    position: absolute;
+    height: 10vw;
+    width: 10%;
+    background-image: radial-gradient(rgb(255, 255, 255) 1%, rgba(128, 109, 0, 0)99%);
+    border-radius: 50%;
+    margin: 10% 10% 10% 40%;
+    animation: glowing 5000ms infinite;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 -10px #ffde961c; }
+    50% { box-shadow: 0 0 1px 500px #ffde961c; }
+    50% { box-shadow: 0 0 1px 500px #ffde961c; }
+    100% { box-shadow: 0 0 -10px #ffde961c; }
+  }
+
+  

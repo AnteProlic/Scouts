@@ -10,26 +10,26 @@ CORS(location, supports_credentials=True)
 def def_location():
     locations = mongo.db.locations
     locations.insert_one({
-                            'location': request.json['location'],
-                            'coordinates':
-                            {
-                                'latitude': request.json['latitude'], 
-                                'longitude': request.json['longitude'],
-                            },
-                            'description': request.json['description'],
-                            'user': session['name'],
-                            'collection': request.json['collection']
-                        })
+        'name': request.json['name'],
+        'coordinates':
+        {
+            'latitude': request.json['latitude'], 
+            'longitude': request.json['longitude'],
+        },
+        'description': request.json['description'],
+        'user': session['name'],
+        'collection': request.json['collection']
+        })
     return '200'
 
-@location.route('/get', methods=['POST'])
+@location.route('/', methods=['GET'])
 def def_get_location():
     mylocations = mongo.db.locations
     mylocs = []
     for locs in mylocations.find({}):
         info = {
         '_id': str(locs['_id']),
-        'location': locs['location'],
+        'name': locs['name'],
         'coordinates': {
             'latitude': locs['coordinates']['latitude'],
             'longitude': locs['coordinates']['longitude'],
@@ -48,7 +48,6 @@ def def_get_location():
 def def_del_location():
     mylocations = mongo.db.locations
     delloc = mylocations.find_one({'_id': ObjectId(request.json['_id'])})
-    print(delloc)
     if delloc is not None:
             mylocations.delete_one(delloc)
     return '200'
@@ -57,11 +56,10 @@ def def_del_location():
 def def_put_location():
     mylocations = mongo.db.locations
     putloc = mylocations.find_one({'_id': ObjectId(request.json['_id'])})
-    print(putloc)
     if putloc is not None:
-        if request.json['location'] is not "":
-            old_loc = {'location': putloc['location']}
-            update_loc = {'$set': {'location': request.json['location']}}
+        if request.json['name'] is not "":
+            old_loc = {'name': putloc['name']}
+            update_loc = {'$set': {'name': request.json['name']}}
             mylocations.update_one(old_loc, update_loc)
         if request.json['description'] is not "":
             old_des = {'description': putloc['description']}

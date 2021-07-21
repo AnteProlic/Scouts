@@ -1,0 +1,12 @@
+#btncolor{
+    background-color: white;
+    position: absolute;
+    width: 100px;
+    visibility: hidden;
+}
+@media only screen and (max-width: 1280px) {
+    #btncolor{
+    visibility: visible;
+    width: 100%;
+    }
+  }

@@ -1,6 +1,11 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import axios from 'axios';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box'
+import InputLabel from '@material-ui/core/InputLabel'
+import NativeSelect from '@material-ui/core/NativeSelect'
 
 import './register.css';
 import { useState } from 'react';
@@ -24,9 +29,9 @@ const Register = () => {
                 admin: admin
             })
                 .then(res => {
-                    if (res.data == 200) {
+                    if (res.data === 200) {
                         getError(<Redirect to='/' />);
-                    } if (res.data == 403) {
+                    } if (res.data === 403) {
                         getError('That user already exists');
                     };
                 });
@@ -34,26 +39,23 @@ const Register = () => {
     }
 
     return <div id='form_container'>
-        <div id='sun'></div>
-        <div id='reg-container'>
-            <div id='title'>REGISTER</div>
+        {/* <Box id='sun'></Box> */}
+        <Box id='reg-container'>
+            <Box id='title'>REGISTER</Box>
+            <br/>
             <div>{errMessage}</div>
-            <div>Username: </div>
-            <input type='text' name='username' className='input1' onChangeCapture={(e) => { setName(e.target.value) }} /><br />
-            <div>E-mail: </div>
-            <input type='email' name='email' className='input1' onChangeCapture={(e) => { setMail(e.target.value) }} /><br />
-            <div>Password: </div>
-            <input type='password' name='password' className='input1' onChangeCapture={(e) => { setPass(e.target.value) }} /><br />
-            <div>Re-enter password: </div>
-            <input type='password' name='repass' className='input1' onChangeCapture={(e) => { setRepass(e.target.value) }} /><br />
+            <TextField  id="outlined-basic" label="Username" variant="outlined"  className='input1' onChangeCapture={(e) => { setName(e.target.value) }} /><br />
+            <br/>
+            <TextField  id="outlined-basic" label="E-mail" variant="outlined"  className='input1' onChangeCapture={(e) => { setMail(e.target.value) }} /><br />
+            <br/>
+            <TextField  id="outlined-basic" label="Password" variant="outlined"  className='input1' onChangeCapture={(e) => { setPass(e.target.value) }} /><br />
+            <br/>
+            <TextField  id="outlined-basic" label="Re-enter password" variant="outlined"  className='input1' onChangeCapture={(e) => { setRepass(e.target.value) }} /><br />
             <br />
-            <select onChangeCapture={(e) => { setAdmin(e.target.value) }}>
-                <option value='0'>User</option>
-                <option value='1'>Admin</option>
-            </select>
-            <br></br>
-            <input type='submit' id='submit' value='SUBMIT' onClick={Submit}></input>
-        </div>
+            <br/>
+            <br/>
+            <Button type='submit' id='submit' value='SUBMIT' onClick={Submit}>Submit</Button>
+        </Box>
 
     </div>
 };

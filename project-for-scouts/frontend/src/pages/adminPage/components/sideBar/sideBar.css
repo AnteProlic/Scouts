@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+body{
+    background-image: white;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+    box-shadow: 0 5px 10px 1px rgba(12, 12, 12, 0.363);
+    background-color: white;
+    width: 15%;
+    height: 96%;
+    z-index: 2;
+    position: absolute;
+    margin-left: 85%;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.link:hover {
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.144) , rgba(0, 0, 0, 0))
+}
+
+.input-text1 {
+    width: 50%;
+}
+.input-text2{
+    width: 50%;
+}
+
+.cls-button {
+    background-color: rgb(125, 181, 255);
+}
+
+.visible {
+    height: auto;
+    width: auto;
+}
+
+.invisible {
+    opacity: 0;
+    height: 0;
+}
+
+.hover {
+    cursor: pointer;
+}
+
+#cls-button {
+    background-color: rgb(102, 181, 255);
+    width: 20px;
+    height: 30px;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    color: white;
+}
+#cls-button1 {
+    background-color: rgb(102, 181, 255);
+    width: 20px;
+    height: 30px;
+    margin-left: 5%;
+    color: white;
+}
+
+
+#location {
+    background-color: whitesmoke;
+    margin-top: 1px;
+    width: 100%;
+    overflow: hidden;
+    padding: 2%;
+}
+
+#location:hover {
+    cursor: pointer;
+    background-color: rgb(219, 234, 253);
+}
+#sum {
+    width: 100%;
+    border-top: solid 1px black;
+}
+
+#top {
+    font-family: 'Roboto', sans-serif;
+    font-size: large;
+    margin: 5% 10% 0 10%;
+}
+#col-name{
+    cursor: pointer;
+    padding: 2%;
+    background-color: rgb(125, 181, 255);
+    color: white;
+}
+#col-name:hover {
+    background-color: rgb(125, 181, 255);
+  }
+.box {
+    padding: 2%;
+}
+.collapsible { 
+    cursor: pointer;
+}
+.search {
+    padding: 0 2%;
+}
+
+#req-title {
+    margin: 0;
+}
+
+#req-style {
+   border-radius: 4%;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   padding-left: 10px;
+   padding-right: 50px;
+   overflow: auto;
+
+}
+
+.input-box {
+    width: 100%;
+    height: 3vw;
+    background-color: antiquewhite;
+    position: absolute;
+}
+
+.cls-button {
+    background-color: white;
+    border: black 1px solid;
+    border-radius: 10%;
+}
+
+#sadf {
+    overflow: auto;
+    height: 30vw;
+}
+
+#sadf::-webkit-scrollbar {
+    display: none;
+}
+
+@media only screen and (max-width: 1280px) {
+    .sidebar {  
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        position: relative;
+        margin-left: 0;
+        font-family: 'Roboto', sans-serif; 
+    }
+    #sadf {
+        overflow: auto;
+        height: 100vw;
+    }
+    #req-style {
+        margin: 2%;
+        border: rgb(161, 161, 161) 1px solid;
+        border-radius: 4%;
+        padding: 2%;
+        height: 50vw;
+        overflow: auto;
+     }
+     body{
+        background-image: white;
+        overflow: auto;
+        font-family: 'Roboto', sans-serif;
+    }
+  }

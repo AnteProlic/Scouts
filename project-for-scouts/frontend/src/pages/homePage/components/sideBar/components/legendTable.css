@@ -1,0 +1,46 @@
+#col-name1{
+    border: rgb(125, 181, 255) solid 1px;
+    cursor: pointer;
+    padding: 2%;
+    background-color: rgb(102, 181, 255);
+    color: white;   
+    border-bottom: 2px rgba(0, 0, 0, 0.575) solid;
+}
+
+#location { 
+    background-color: whitesmoke;
+    margin-top: 1px;
+    width: 100%;
+    overflow: hidden;
+    padding: 2%;
+}
+
+#text-disc {
+    margin: 2%;
+}
+
+#icon {
+    color: rgb(102, 181, 255);
+    font-size: 20px;
+    float: left;
+    margin-bottom: -1%;
+}
+
+#location {
+    background-color: whitesmoke;
+    margin-top: 1px;
+    width: 100%;
+    overflow: hidden;
+    padding: 2%;
+}
+
+#text-disc {
+    margin: 2%;
+}
+
+#icon {
+    color: rgb(102, 181, 255);
+    font-size: 20px;
+    margin-bottom: -1%;
+    float: left;
+}

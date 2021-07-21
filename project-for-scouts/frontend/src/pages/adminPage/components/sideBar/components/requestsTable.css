@@ -1,0 +1,28 @@
+#accept{
+    background-color: rgb(125, 209, 0);
+    margin:  1% 0 1% 7%;
+    max-width: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+}
+#reject{
+    background-color: rgb(255, 64, 64);
+    margin: 1% 0 1% 2%;
+    max-width: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+}
+#button-group {
+    margin-left: 3%;
+    box-shadow: none;
+}
+#name {
+    margin-top: 1%;
+    width: 60%;
+    height: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+white-space: nowrap;
+}

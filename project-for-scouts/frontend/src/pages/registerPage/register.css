@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 body{
-    background-image: url('../homePage/components/images/205520bc4f68d23a4a2fe7131d3ece0c.jpg');
+    background-image: url('../homePage/components/images/photo-1529939590099-d031a925e483.jfif');
     width: 100%;
 }
 #reg-container {
@@ -9,26 +9,27 @@ body{
     font-family: 'Rubik', sans-serif;
     background-color: white;
     width: 24%;
-    margin: 10% 37%;
-    height: 14vw;
-    padding: 8% 0;
+    margin: auto;
+    height: 50vw;
+    padding: 12% 0;
     text-align: center;
 }
 .input1 {
     border: black 1px solid;
     border-radius: 5px;
-    width: 50%;
-    height: 1vw;
-    margin: 1%;
+    width: 60%;
+    height: 3vw;
+    margin: 3%;
     background-color: whitesmoke;
-}
+} 
 #title {
     font-size: 200%;
 }
 #submit{
-    background-color: whitesmoke;
+    background-color: rgb(71, 139, 248);
     width: 20%;
     height: 2vw;
+    color: white;
 }
 #sun {
     position: absolute;
@@ -47,4 +48,34 @@ body{
     100% { box-shadow: 0 0 -10px #ffde961c; }
   }
 
+  @media only screen and (max-width: 1280px) {
+    #reg-container {
+        position: absolute;
+        border-radius: 10px;
+        font-family: 'Rubik', sans-serif;
+        background-color: white;
+        width: 100%;
+        margin: auto;
+        height: 100%;
+        padding-top: 40%;
+        text-align: center;
+    }
+    #title {
+        font-size: 200%;
+    }
+    .input1 {
+        border: black 1px solid;
+        border-radius: 5px;
+        width: 60%;
+        height: auto;
+        margin: auto;
+        background-color: whitesmoke;
+    } 
+    #submit{
+        background-color: rgb(71, 139, 248);
+        width: 20%;
+        height: 5%;
+    }
+    
+  }
   

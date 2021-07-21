@@ -1,16 +1,22 @@
-import React/*, { useState, useEffect, useRef }  */from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './navBar.css';
+import Button from '@material-ui/core/Button'
+import Box from '@material-ui/core/Box'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 const NavBar = () => {
     return <div>
-        <div id='nav-container'>
+        <Box id='nav-container1'>
+        <div className='link1'>
+        <ButtonGroup variant="text" color="primary" aria-label="text primary button group">
             
-            <div className='link1'>
-            <Link className='link2' to='/login'>Log in /</Link>
-            <Link className='link2' to='/register'> Register</Link>
-            </div>  
-        </div>
+            <Button><Link className='linkin' to='/login'>Log in</Link></Button>
+            <Button><Link className='linkin' to='/register'> Register</Link></Button>
+           
+        </ButtonGroup>
+        </div>  
+        </Box>
 
     </div>
 }

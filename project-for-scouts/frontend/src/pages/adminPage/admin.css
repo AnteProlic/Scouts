@@ -1,0 +1,14 @@
+#btncolor{
+    background-color: white;
+    position: fixed;
+    right: 0px;
+    visibility: hidden;
+}
+@media only screen and (max-width: 1280px) {
+    #btncolor{
+    visibility: visible;
+    width: 10%;
+    background-color: rgb(219, 234, 253);
+    z-index: 3; 
+    }
+  }

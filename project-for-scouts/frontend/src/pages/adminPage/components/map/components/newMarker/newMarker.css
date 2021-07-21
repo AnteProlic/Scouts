@@ -1,0 +1,64 @@
+#font{
+    font-size: 140%;
+}
+#button {
+    min-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    max-width: 30px;
+}
+#button1 {
+    min-width: 30px;
+    min-height: 30px;
+    max-height: 30px;
+    max-width: 30px;
+    margin-left: 5%;
+}
+#imgbtn {
+    display: block;
+    max-height: 50px;
+    max-width: 50px;
+    width: auto;
+    height: auto;
+}
+.pfp1 {
+    width: auto;
+    min-height: 10vw;
+    max-height: 10vw;
+    margin: 1%;
+}
+#images {
+    overflow-x: auto;
+}
+.custom-file-upload1 {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: black;
+    height: 10vw;
+    width: 100%;
+}
+
+#popup::-webkit-scrollbar {
+    display: none;
+}
+
+#delete1 {
+    right: 2px;
+    max-width: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+}
+#edit1 {
+    right: 2px;
+    max-width: 30px;
+    min-width: 30px;
+    max-height: 30px;
+    min-height: 30px;
+}
+#addimg1 {
+    right: 0;
+}

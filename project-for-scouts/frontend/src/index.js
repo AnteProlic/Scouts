@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './pages/homePage/home.jsx';
+import Admin from './pages/adminPage/admin.jsx'
 import Register from './pages/registerPage/register.jsx';
 import Login from './pages/loginPage/login.jsx';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -10,6 +11,7 @@ ReactDOM.render(
     <BrowserRouter>
       <Switch>
         <Route exact path='/' component={Home} />
+        <Route path='/admin' component={Admin} />
         <Route path='/login' component={Login} />
         <Route path='/register' component={Register} />
       </Switch>

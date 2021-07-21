@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import axios from 'axios';
-
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 import './login.css';
+import Box from '@material-ui/core/Box'
+
 
 const Login = () => {
     const [username, setName] = useState('');
@@ -16,11 +19,19 @@ const Login = () => {
         })
 
             .then(res => {
-                if (res.data == 200) {
-                    getError(<Redirect to='/' />);
-                } if (res.data == 401) {
+                if (res.data === 200) {
+                    axios.post('/user/get').then(res => {
+                        if (res.data === 1) {
+                            getError(<Redirect to='/admin'/>)
+                        } if (res.data === 0) {
+                            getError(<Redirect to='/'/>)
+                        } else {
+                            getError(<Redirect to='/login' />)
+                        }
+                    })
+                } if (res.data === 401) {
                     getError('Username/password combination incorrect');
-                } if (res.data == 403) {
+                } if (res.data === 403) {
                     getError('There\'s already an user in session');
                 };
             });
@@ -29,35 +40,35 @@ const Login = () => {
     function LogOut() {
         axios.get('/user/logout')
             .then(res => {
-                if (res.data == 200) {
+                if (res.data === 200) {
                     getError('User logged out')
                 };
             });
     };
 
-    return <div id='container-all'>
-        <div id='side-content'>
-        <div id='sun'></div>
-        </div>
-        <div id='text-container'>   
-            <div id='text-content'>
-            <div>
-                <div className='text-h'>Log in</div>
-                <div>{errMessage}</div>
-                <div className='text-p'>Username: </div>
-                <input className='input' type='text' name='username' onChangeCapture={(e) => { setName(e.target.value) }} /><br />
-                <div className='text-p'>Password: </div>
-                <input className='input' type='password' name='password' onChangeCapture={(e) => { setPass(e.target.value) }} /><br />
+    return <div>
+        <Box>
+        </Box>
+        <Box id='text-container'>   
+            <Box id='text-content'>
+            <Box id='flex'>
+                <Box className='text-h'>Log in</Box>
                 <br />
-                <input className='input' type='submit' value='LOG IN' class='button' onClick={Submit}></input>
+                <Box>{errMessage}</Box>
+                <br />  
+                <TextField id="filled-basic" label="Username" variant="filled" className='input' type='text' name='username' onChangeCapture={(e) => { setName(e.target.value) }} />
                 <br />
-            </div>
-            <br/>
-            <p>You don't have account? Click the link below to make one!</p>
-            <Link className='link' to='/register'>registration</Link>
-            <div onClick={LogOut}>LOG OUT</div>
-            </div>
-        </div>
+                <TextField id="filled-basic" label="Password" variant="filled" className='input' type='password' name='password' onChangeCapture={(e) => { setPass(e.target.value) }} />
+                <br />
+                <Box />
+                <Button id="filled-basic" label="Filled" variant="filled" id='login' onClick={Submit}>Log in</Button>
+                <br />
+                <Box>You don't have account? Click the link below to make one!</Box>
+            <Button><Link className='link' to='/register'>registration</Link></Button>       
+            </Box>
+            
+            </Box>
+        </Box>
 
     </div>
 };

@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+#nav-container1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 100%;
+    z-index: 3;
+    height: 4vh;
+    width: 100%;
+    background-color: rgb(102, 181, 255);
+    box-shadow: 0 -2px 5px 1px black;
+}
+.link2 {
+    font-size: 120%;
+    text-decoration: none;
+    margin-left: 1%;
+    color: white;
+}
+.linkin {
+    text-decoration: none;
+    color: white;
+}
+#inbox {
+    float: right;
+}

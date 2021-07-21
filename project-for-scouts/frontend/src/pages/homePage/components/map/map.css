@@ -1,7 +1,7 @@
 #map {
   height: 96vh;
   bottom: 0;
-  width: 85%;
+  width: 100%;
   position: absolute;
   overflow: hidden;
   z-index: -1;
